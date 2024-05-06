@@ -22,3 +22,6 @@ function updateCounter() {
     // Update the content of the paragraph element
     countParagraph.textContent = `${updateCounter.counter} clicks on the button`;
 }
+
+const button = document.getElementById('your-button-id'); // Replace 'your-button-id' with the actual id of your button element
+button.addEventListener('click', debounce(updateCounter, 300)); // Adjust debounce delay (in milliseconds) as needed
