@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
@@ -8,8 +8,8 @@ module.exports = {
 		}),
 		new CleanWebpackPlugin(),
 		],
-        devtool: 'inline-source-map',
-        mode: "development",
+    devtool: 'inline-source-map',
+    mode: "development",
 
     entry: {
 		header: {
@@ -36,10 +36,10 @@ module.exports = {
 		},
 	},
     devServer: {
-        contentBase: path.join(__dirname, 'public'),
-        compress: true,
-        port: 8564,
-      },
+		static: path.join(__dirname, './public'),
+		open: true,
+		port: 8564,
+	},
     performance: {
 		maxAssetSize: 1000000,
 	},  
