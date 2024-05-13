@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './HolbertonLogo.jpeg'
+import logo from '../assets/HolbertonLogo.jpeg'
 import './App.css';
-import {getFullYear, getFooterCopy} from './utils'
+import {getFullYear, getFooterCopy} from '../utils/utils'
 import { useRef } from 'react'
 
 function App() {
