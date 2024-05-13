@@ -1,4 +1,5 @@
-const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     entry: './src/index.js',
@@ -40,11 +41,20 @@ module.exports = {
         extensions: ['.*', '.js', '.jsx'],
     },
     devServer: {
-        static: './dist',
+        static: {
+            directory: './dist',
+        },
         compress: true,
         open: true,
         hot: true,
         port: 8564,
     },
-    devtool: 'inline-source-map'
+    devtool: 'inline-source-map',
+    plugins: [
+		new HtmlWebpackPlugin({
+			name: 'index.html',
+			inject: false,
+			template: './dist/index.html',
+		}),
+	],
 };
