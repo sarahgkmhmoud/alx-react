@@ -1,47 +1,26 @@
 import React from 'react';
-import './Notifications.css';
-import closeIcon from '../assets/close-icon.png';
-import { getLatestNotification } from '../utils/utils';
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
+import Notifications from './Notifications';
 
-export default function NotifyDiv(){
-    return(
-        <div className="Notifications">
-        <button
-        style={{
-            color: '#3a3a3a',
-            fontWeight: 'bold',
-            background: 'none',
-            border: 'none',
-            fontSize: '15px',
-            position: 'absolute',
-            right: '2px',
-            top: '2px',
-            cursor: 'pointer',
-        }}
-        aria-label="Close"
-        onClick={(e) => {
-            console.log('Close button has been clicked');
-        }}
-        >
-        <img src={closeIcon} alt="closeicon" />
-        </button>
-        <p>
-            Here is the list of notifications
-        </p>
-        <ul>
-            <li data-priority="default">
-                New course available
-            </li>
-            <li data-priority="urgent">
-                New resume available
-            </li>
-            <li
-                data-priority="urgent"
-                dangerouslySetInnerHTML={{__html: getLatestNotification()}}
-            >
-            </li>
-        </ul>
-    </div>
-);
-}
+describe("Testing the <Notifications /> Component", () => {
+  
+  let wrapper;
 
+  beforeEach(() => {
+    wrapper = shallow(<Notifications />);
+  });
+
+  it("<Notifications /> is rendered without crashing", () => {
+    expect(wrapper).to.not.be.an('undefined');
+  });
+
+  it("<Notifications /> renders three list items", () => {
+    expect(wrapper.find('li')).to.have.lengthOf(3);
+  });
+
+  it("<Notifications /> render the text 'Here is the list of notifications'", () => {
+    expect(wrapper.contains(<p>Here is the list of notifications</p>)).to.equal(true);
+  });
+
+});
