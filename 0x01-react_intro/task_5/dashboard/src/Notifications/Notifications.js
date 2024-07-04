@@ -1,9 +1,9 @@
 import React from 'react';
 import './Notifications.css';
-import closeIcon from '../assets/close-icon.png';
+import {closeIcon} from '../assets/close-icon.png';
 import { getLatestNotification } from '../utils/utils';
 
-export default function NotifyDiv(){
+export default function Notifications(){
     return(
         <div className="Notifications">
         <button

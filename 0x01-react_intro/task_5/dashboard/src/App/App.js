@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/HolbertonLogo.jpg'
+import logo from '../assets/HolbertonLogo.svg'
 import './App.css';
 import {getFullYear, getFooterCopy} from '../utils/utils'
 import { useRef } from 'react'

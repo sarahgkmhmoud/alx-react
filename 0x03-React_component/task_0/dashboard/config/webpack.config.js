@@ -24,8 +24,6 @@ module.exports = {
                         {
                             loader: 'image-webpack-loader',
                             options: {
-                                name: '[name].[ext]',
-                                outputPath: 'assets/images',
                                 bypassOnDebug: true, // webpack@1.x
                                 disable: true, // webpack@2.x and newer
                             },
